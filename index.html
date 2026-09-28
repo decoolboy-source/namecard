@@ -136,13 +136,15 @@ const CONFIG = {
   initials: "QĐ",
   photo: "",                 // vd: "avatar.jpg" (ảnh vuông ≥ 400×400 px)
   logo: "",                  // vd: "logo-nasa.svg"
-  phone: "+84000000000",     // [SĐT di động, định dạng quốc tế]
-  zalo: "84000000000",       // [SĐT Zalo, bỏ dấu +]
-  email: "email@nasa.com.vn",// [Email công việc]
-  website: "https://",       // [Website công ty]
+  phone: "+84936973604",
+  zalo: "0936973604",
+  email: "dedq@nasa-tech.com.vn",
+  email2: "dehvacr@gmail.com",
+  website: "https://nasa-tech.com.vn",
   linkedin: "",              // [URL LinkedIn – bỏ trống nếu không có]
   profilePdf: "",            // [Hồ sơ năng lực PDF, vd "ho-so-nang-luc.pdf"]
-  address: "TP. Hồ Chí Minh, Việt Nam", // [Địa chỉ văn phòng]
+  address: "52 Trần Quang Cơ, P. Phú Thạnh, TP. Hồ Chí Minh",
+  mapsUrl: "https://maps.app.goo.gl/TMoWxoE8T75GcMRr8",
   vi: {
     role: "Phó Giám đốc Kinh doanh",
     company: "Công ty TNHH Kỹ thuật và Thương mại Dịch vụ NASA",
@@ -217,9 +219,12 @@ function render(){
 
   const links = [];
   if(CONFIG.profilePdf) links.push([t.profile, CONFIG.profilePdf]);
-  if(CONFIG.website && CONFIG.website !== "https://") links.push([t.site, CONFIG.website]);
+  if(CONFIG.website) links.push([t.site + " · nasa-tech.com.vn", CONFIG.website]);
   if(CONFIG.linkedin) links.push(["LinkedIn", CONFIG.linkedin]);
-  links.push([CONFIG.address, "https://maps.google.com/?q=" + encodeURIComponent(CONFIG.address)]);
+  links.push([CONFIG.email, "mailto:" + CONFIG.email]);
+  if(CONFIG.email2) links.push([CONFIG.email2, "mailto:" + CONFIG.email2]);
+  links.push(["0936 973 604", "tel:" + CONFIG.phone]);
+  links.push([CONFIG.address, CONFIG.mapsUrl || ("https://maps.google.com/?q=" + encodeURIComponent(CONFIG.address))]);
   $("links").innerHTML = links.map(([n,h]) => `<a href="${h}" target="_blank" rel="noopener">${n}</a>`).join("");
 
   $("foot").textContent = `© ${new Date().getFullYear()} ${CONFIG.en.company}`;
