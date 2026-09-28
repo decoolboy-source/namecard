@@ -62,6 +62,8 @@ h1{font-size:23px;font-weight:700;letter-spacing:-.2px}
 h2{font-size:13px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);font-weight:600;margin-bottom:12px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:500}
+.svc{font-size:13.5px;font-weight:600;color:var(--ice);margin-bottom:12px}
+.sum{font-size:13.5px;color:var(--muted);margin:-4px 0 12px}
 .proj{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
 .proj:first-of-type{border-top:0;padding-top:0}
 .proj .num{flex:0 0 40px;height:40px;border-radius:10px;background:var(--ice-soft);color:var(--ice);display:grid;place-items:center;font-weight:700}
@@ -111,7 +113,8 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:22px}
   </section>
 
   <section class="card"><h2 data-i18n="expertise"></h2><div class="chips" id="chips"></div></section>
-  <section class="card"><h2 data-i18n="projects"></h2><div id="projects"></div></section>
+  <section class="card"><h2 data-i18n="products"></h2><p class="svc" id="services"></p><div class="chips" id="products"></div></section>
+  <section class="card"><h2 data-i18n="projects"></h2><p class="sum" id="projSummary"></p><div id="projects"></div></section>
   <section class="card links"><h2 data-i18n="links"></h2><div id="links"></div></section>
   <section class="card links"><h2 data-i18n="offices"></h2><div id="offices"></div></section>
 
@@ -145,7 +148,8 @@ const CONFIG = {
   email2: "dehvacr@gmail.com",
   website: "https://nasa-tech.com.vn",
   linkedin: "",              // [URL LinkedIn – bỏ trống nếu không có]
-  profilePdf: "",            // [Hồ sơ năng lực PDF, vd "ho-so-nang-luc.pdf"]
+  profilePdf: "ho-so-nang-luc-NASA.pdf",
+  hotline: "+84918749160",
   address: "52 Trần Quang Cơ, P. Phú Thạnh, TP. Hồ Chí Minh",
   mapsUrl: "https://maps.app.goo.gl/TMoWxoE8T75GcMRr8",
   vi: {
@@ -153,10 +157,18 @@ const CONFIG = {
     company: "Công ty TNHH Kỹ thuật và Thương mại Dịch vụ NASA",
     tagline: "Giải pháp trọn gói (turnkey) lạnh công nghiệp, kho lạnh – cấp đông, HVAC và MEP cho nhà máy chế biến và khu công nghiệp.",
     expertise: ["Lạnh công nghiệp","Kho lạnh – Cấp đông IQF","HVAC & Thông gió","MEP / BIM Revit","Dự toán – Đấu thầu","Điện mặt trời"],
+    projSummary: "24 dự án tại 9 tỉnh/thành và Myanmar (2004–2024)",
+    products: ["Hệ thống lạnh công nghiệp","IQF băng lưới / băng thép","Tủ đông tiếp xúc","Tủ đông gió","Máy mạ băng, tái đông","Chiller sữa – đồ uống","Thiết bị chế biến thủy sản","Kho lạnh – Panel PIR/PU","Điện mặt trời"],
+    services: "Tư vấn → Thiết kế → Chế tạo → Lắp đặt → Chuyển giao công nghệ",
     projects: [
-      {t:"Kho lạnh & dây chuyền cấp đông", d:"Nhà máy chế biến thủy hải sản, thực phẩm · IQF, tủ đông tiếp xúc, tủ đông gió, mạ băng"},
-      {t:"Nhà máy trong khu công nghiệp", d:"KCN Tân Phú Trung · điều chỉnh kỹ thuật, phân chia phạm vi công việc"},
-      {t:"Điều hòa – thông gió công trình dân dụng", d:"Tổ hợp biệt thự 8 tầng kết hợp văn phòng"}
+      {t:"Vĩnh Hoàn Corporation", d:"Đồng Tháp · 2014–2021"},
+      {t:"Hùng Cá", d:"Đồng Tháp · 2004–2022"},
+      {t:"DH Logistic – Daiwa House VN (Meito, New Land)", d:"Long An · 2022"},
+      {t:"Nha Trang Seafood (NTFS)", d:"Cần Thơ · 2020–2022"},
+      {t:"Thông Thuận Milk JSC", d:"Bình Thuận · 2024"},
+      {t:"HappyFood Việt Nam", d:"Đồng Tháp · 2024"},
+      {t:"ITL Logistic Đà Nẵng (Indo Trần)", d:"Đà Nẵng · 2023"},
+      {t:"Global Earth Agro & Aqua", d:"Myanmar · 2021"}
     ]
   },
   en: {
@@ -164,10 +176,18 @@ const CONFIG = {
     company: "NASA Engineering and Trading Service Company Limited",
     tagline: "Turnkey solutions for industrial refrigeration, cold storage & freezing, HVAC and MEP for processing plants and industrial parks.",
     expertise: ["Industrial Refrigeration","Cold Storage & IQF Freezing","HVAC & Ventilation","MEP / BIM Revit","Estimating & Tendering","Solar Power"],
+    projSummary: "24 projects across 9 provinces of Vietnam and Myanmar (2004–2024)",
+    products: ["Industrial refrigeration","IQF mesh / steel belt","Contact freezers","Air blast freezers","Glazing & re-freezers","Dairy & beverage chillers","Seafood processing equipment","Cold storage – PIR/PU panels","Solar power"],
+    services: "Consulting → Design → Manufacturing → Installation → Technology transfer",
     projects: [
-      {t:"Cold storage & freezing lines", d:"Seafood & food processing plants · IQF, plate, blast freezers, glazing"},
-      {t:"Factories in industrial parks", d:"Tan Phu Trung IP · technical coordination, scope split"},
-      {t:"HVAC for civil buildings", d:"8-storey villa & office complex"}
+      {t:"Vinh Hoan Corporation", d:"Dong Thap · 2014–2021"},
+      {t:"Hung Ca Factories", d:"Dong Thap · 2004–2022"},
+      {t:"DH Logistic – Daiwa House VN (Meito, New Land)", d:"Long An · 2022"},
+      {t:"Nha Trang Seafood (NTFS)", d:"Can Tho · 2020–2022"},
+      {t:"Thong Thuan Milk JSC", d:"Binh Thuan · 2024"},
+      {t:"HappyFood Vietnam", d:"Dong Thap · 2024"},
+      {t:"ITL Logistic Danang (Indo Tran)", d:"Da Nang · 2023"},
+      {t:"Global Earth Agro & Aqua", d:"Myanmar · 2021"}
     ]
   }
 };
@@ -176,10 +196,10 @@ const CONFIG = {
 const T = {
   vi:{call:"Gọi",zalo:"Zalo",email:"Email",web:"Website",save:"Lưu vào danh bạ",qr:"Mã QR",share:"Chia sẻ",
       expertise:"Lĩnh vực chuyên môn",projects:"Dự án tiêu biểu",links:"Liên kết",scan:"Quét để mở namecard",close:"Đóng",
-      profile:"Hồ sơ năng lực (PDF)",offices:"Văn phòng & Nhà máy",hq:"Trụ sở chính",showroom:"Showroom",factory:"Chi nhánh – Nhà máy",site:"Website công ty",copied:"Đã sao chép liên kết",lang:"EN"},
+      profile:"Hồ sơ năng lực (PDF)",products:"Sản phẩm & Dịch vụ",hotline:"Hotline công ty",offices:"Văn phòng & Nhà máy",hq:"Trụ sở chính",showroom:"Showroom",factory:"Chi nhánh – Nhà máy",site:"Website công ty",copied:"Đã sao chép liên kết",lang:"EN"},
   en:{call:"Call",zalo:"Zalo",email:"Email",web:"Website",save:"Save to contacts",qr:"QR code",share:"Share",
       expertise:"Expertise",projects:"Featured projects",links:"Links",scan:"Scan to open this card",close:"Close",
-      profile:"Company profile (PDF)",offices:"Offices & Factory",hq:"Head office",showroom:"Showroom",factory:"Branch – Factory",site:"Company website",copied:"Link copied",lang:"VI"}
+      profile:"Company profile (PDF)",products:"Products & Services",hotline:"Company hotline",offices:"Offices & Factory",hq:"Head office",showroom:"Showroom",factory:"Branch – Factory",site:"Company website",copied:"Link copied",lang:"VI"}
 };
 const IC = {
   call:'<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>',
@@ -217,6 +237,9 @@ function render(){
     `<a class="act" href="${h}" ${k==="zalo"||k==="web"?'target="_blank" rel="noopener"':''}><span class="ic">${svg(IC[k])}</span>${t[k]}</a>`).join("");
 
   $("chips").innerHTML = L.expertise.map(x => `<span class="chip">${x}</span>`).join("");
+  $("products").innerHTML = L.products.map(x => `<span class="chip">${x}</span>`).join("");
+  $("services").textContent = L.services;
+  $("projSummary").textContent = L.projSummary;
   $("projects").innerHTML = L.projects.map((p,i) =>
     `<div class="proj"><div class="num">${String(i+1).padStart(2,"0")}</div><div><b>${p.t}</b><small>${p.d}</small></div></div>`).join("");
 
@@ -227,6 +250,7 @@ function render(){
   links.push([CONFIG.email, "mailto:" + CONFIG.email]);
   if(CONFIG.email2) links.push([CONFIG.email2, "mailto:" + CONFIG.email2]);
   links.push(["0936 973 604", "tel:" + CONFIG.phone]);
+  links.push([t.hotline + " · 0918 749 160", "tel:" + CONFIG.hotline]);
   $("links").innerHTML = links.map(([n,h]) => `<a href="${h}" target="_blank" rel="noopener">${n}</a>`).join("");
   const q = a => "https://maps.google.com/?q=" + encodeURIComponent(a);
   const offices = [
