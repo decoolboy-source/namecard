@@ -42,7 +42,7 @@ body{font-family:"Be Vietnam Pro",system-ui,sans-serif;background:var(--bg);colo
 .profile{margin-top:-60px;position:relative;text-align:center;padding-top:0}
 .avatar{width:120px;height:120px;border-radius:50%;border:4px solid var(--card);margin:-60px auto 12px;display:grid;place-items:center;object-fit:cover;
   background:linear-gradient(135deg,#0B2545,#134074);color:#fff;font-weight:700;font-size:38px;letter-spacing:1px;box-shadow:var(--shadow)}
-.logo{height:26px;margin:0 auto 10px;display:block}
+.logo{height:64px;margin:0 auto 10px;display:block;background:#fff;border-radius:10px;padding:4px 8px;box-sizing:content-box}
 .logo[hidden]{display:none}
 button{font-family:inherit}
 h1{font-size:23px;font-weight:700;letter-spacing:-.2px}
@@ -69,6 +69,7 @@ h2{font-size:13px;text-transform:uppercase;letter-spacing:1.2px;color:var(--mute
 .proj small{color:var(--muted);font-size:13px}
 .links a{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-top:1px solid var(--line);color:var(--text);text-decoration:none;font-weight:500;font-size:14.5px}
 .links a:first-of-type{border-top:0;padding-top:0}
+.links small{display:block;color:var(--muted);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.6px}
 .links a::after{content:"›";color:var(--muted);font-size:20px;line-height:1}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
 .ghost{padding:13px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--text);font-weight:600;font-size:14px;cursor:pointer}
@@ -112,6 +113,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:22px}
   <section class="card"><h2 data-i18n="expertise"></h2><div class="chips" id="chips"></div></section>
   <section class="card"><h2 data-i18n="projects"></h2><div id="projects"></div></section>
   <section class="card links"><h2 data-i18n="links"></h2><div id="links"></div></section>
+  <section class="card links"><h2 data-i18n="offices"></h2><div id="offices"></div></section>
 
   <footer id="foot"></footer>
 </main>
@@ -134,8 +136,9 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:22px}
 const CONFIG = {
   name: "Dương Quốc Đệ",
   initials: "QĐ",
-  photo: "",                 // vd: "avatar.jpg" (ảnh vuông ≥ 400×400 px)
-  logo: "",                  // vd: "logo-nasa.svg"
+  photo: "avatar.jpg",
+  logo: "logo-nasa.png",
+  taxId: "0317058785",
   phone: "+84936973604",
   zalo: "0936973604",
   email: "dedq@nasa-tech.com.vn",
@@ -158,7 +161,7 @@ const CONFIG = {
   },
   en: {
     role: "Deputy Business Director",
-    company: "NASA Engineering & Trading Service Co., Ltd.",
+    company: "NASA Engineering and Trading Service Company Limited",
     tagline: "Turnkey solutions for industrial refrigeration, cold storage & freezing, HVAC and MEP for processing plants and industrial parks.",
     expertise: ["Industrial Refrigeration","Cold Storage & IQF Freezing","HVAC & Ventilation","MEP / BIM Revit","Estimating & Tendering","Solar Power"],
     projects: [
@@ -173,10 +176,10 @@ const CONFIG = {
 const T = {
   vi:{call:"Gọi",zalo:"Zalo",email:"Email",web:"Website",save:"Lưu vào danh bạ",qr:"Mã QR",share:"Chia sẻ",
       expertise:"Lĩnh vực chuyên môn",projects:"Dự án tiêu biểu",links:"Liên kết",scan:"Quét để mở namecard",close:"Đóng",
-      profile:"Hồ sơ năng lực (PDF)",site:"Website công ty",copied:"Đã sao chép liên kết",lang:"EN"},
+      profile:"Hồ sơ năng lực (PDF)",offices:"Văn phòng & Nhà máy",hq:"Trụ sở chính",showroom:"Showroom",factory:"Chi nhánh – Nhà máy",site:"Website công ty",copied:"Đã sao chép liên kết",lang:"EN"},
   en:{call:"Call",zalo:"Zalo",email:"Email",web:"Website",save:"Save to contacts",qr:"QR code",share:"Share",
       expertise:"Expertise",projects:"Featured projects",links:"Links",scan:"Scan to open this card",close:"Close",
-      profile:"Company profile (PDF)",site:"Company website",copied:"Link copied",lang:"VI"}
+      profile:"Company profile (PDF)",offices:"Offices & Factory",hq:"Head office",showroom:"Showroom",factory:"Branch – Factory",site:"Company website",copied:"Link copied",lang:"VI"}
 };
 const IC = {
   call:'<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>',
@@ -224,10 +227,16 @@ function render(){
   links.push([CONFIG.email, "mailto:" + CONFIG.email]);
   if(CONFIG.email2) links.push([CONFIG.email2, "mailto:" + CONFIG.email2]);
   links.push(["0936 973 604", "tel:" + CONFIG.phone]);
-  links.push([CONFIG.address, CONFIG.mapsUrl || ("https://maps.google.com/?q=" + encodeURIComponent(CONFIG.address))]);
   $("links").innerHTML = links.map(([n,h]) => `<a href="${h}" target="_blank" rel="noopener">${n}</a>`).join("");
+  const q = a => "https://maps.google.com/?q=" + encodeURIComponent(a);
+  const offices = [
+    [t.hq, CONFIG.address, CONFIG.mapsUrl],
+    [t.showroom, "Lô DH, KCN Trần Quốc Toản, P. Mỹ Ngãi, Đồng Tháp", null],
+    [t.factory, "Lô G19, đường N3, KCN Nam Thuận, xã Mỹ Hạnh, Tây Ninh", null]
+  ];
+  $("offices").innerHTML = offices.map(([k,a,u]) => `<a href="${u||q(a)}" target="_blank" rel="noopener"><span><small>${k}</small>${a}</span></a>`).join("");
 
-  $("foot").textContent = `© ${new Date().getFullYear()} ${CONFIG.en.company}`;
+  $("foot").textContent = `© ${new Date().getFullYear()} ${CONFIG.en.company} · MST ${CONFIG.taxId}`;
 }
 
 function toast(msg){ const el=$("toast"); el.textContent=msg; el.classList.add("on"); setTimeout(()=>el.classList.remove("on"),1800); }
