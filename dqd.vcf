@@ -4,9 +4,10 @@ N;CHARSET=UTF-8:Dương;Quốc Đệ;;;
 FN;CHARSET=UTF-8:Dương Quốc Đệ
 ORG;CHARSET=UTF-8:Công ty TNHH Kỹ thuật và Thương mại Dịch vụ NASA
 TITLE;CHARSET=UTF-8:Phó Giám đốc Kinh doanh
-TEL;TYPE=CELL,VOICE:+84000000000
-EMAIL;TYPE=WORK,INTERNET:email@nasa.com.vn
-URL:https://
-ADR;TYPE=WORK;CHARSET=UTF-8:;;;TP. Hồ Chí Minh;;;Việt Nam
-NOTE;CHARSET=UTF-8:Lạnh công nghiệp · Kho lạnh – Cấp đông · HVAC · MEP
+TEL;TYPE=CELL,VOICE,pref:+84936973604
+EMAIL;TYPE=WORK,INTERNET,pref:dedq@nasa-tech.com.vn
+EMAIL;TYPE=HOME,INTERNET:dehvacr@gmail.com
+URL:https://nasa-tech.com.vn
+ADR;TYPE=WORK;CHARSET=UTF-8:;;52 Trần Quang Cơ, P. Phú Thạnh;TP. Hồ Chí Minh;;;Việt Nam
+NOTE;CHARSET=UTF-8:Lạnh công nghiệp · Kho lạnh – Cấp đông · HVAC · MEP. Zalo: 0936973604
 END:VCARD
