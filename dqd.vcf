@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N;CHARSET=UTF-8:Dương;Quốc Đệ;;;
+FN;CHARSET=UTF-8:Dương Quốc Đệ
+ORG;CHARSET=UTF-8:Công ty TNHH Kỹ thuật và Thương mại Dịch vụ NASA
+TITLE;CHARSET=UTF-8:Phó Giám đốc Kỹ thuật & Thương mại
+TEL;TYPE=CELL,VOICE:+84000000000
+EMAIL;TYPE=WORK,INTERNET:email@nasa.com.vn
+URL:https://
+ADR;TYPE=WORK;CHARSET=UTF-8:;;;TP. Hồ Chí Minh;;;Việt Nam
+NOTE;CHARSET=UTF-8:Lạnh công nghiệp · Kho lạnh – Cấp đông · HVAC · MEP
+END:VCARD

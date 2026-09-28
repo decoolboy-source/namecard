@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dương Quốc Đệ | NASA Engineering</title>
+<meta name="description" content="Dương Quốc Đệ – Phó Giám đốc Kỹ thuật & Thương mại, NASA Engineering & Trading Service. Lạnh công nghiệp, kho lạnh – cấp đông, HVAC, MEP.">
+<meta name="theme-color" content="#0B2545">
+<meta property="og:title" content="Dương Quốc Đệ – NASA Engineering">
+<meta property="og:description" content="Lạnh công nghiệp · Kho lạnh – Cấp đông · HVAC · MEP">
+<meta property="og:type" content="profile">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B2545; --ice:#13A8D8; --ice-soft:#E6F6FC;
+  --bg:#F3F6FA; --card:#FFFFFF; --text:#0F1B2D; --muted:#5B6B80; --line:#E2E8F0;
+  --shadow:0 10px 30px rgba(11,37,69,.10);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#07111F; --card:#0F1D31; --text:#E8EEF6; --muted:#93A3B8; --line:#1E2E45; --ice-soft:#0E2A3D;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#07111F; --card:#0F1D31; --text:#E8EEF6; --muted:#93A3B8; --line:#1E2E45; --ice-soft:#0E2A3D;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Be Vietnam Pro",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:460px;margin:0 auto;padding:0 16px 40px}
+.cover{height:150px;background:linear-gradient(135deg,#0B2545 0%,#134074 55%,#13A8D8 100%);position:relative;overflow:hidden}
+.cover::after{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 85% 20%,rgba(255,255,255,.18) 0 2px,transparent 3px) 0 0/28px 28px;opacity:.6}
+.topbar{position:absolute;top:12px;right:12px;display:flex;gap:8px;z-index:2}
+.pill{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);color:#fff;font-weight:600;font-size:12px;line-height:1;padding:8px 12px;border-radius:999px;cursor:pointer;backdrop-filter:blur(6px)}
+.card{background:var(--card);border-radius:20px;box-shadow:var(--shadow);padding:20px;margin-top:16px}
+.profile{margin-top:-60px;position:relative;text-align:center;padding-top:0}
+.avatar{width:120px;height:120px;border-radius:50%;border:4px solid var(--card);margin:-60px auto 12px;display:grid;place-items:center;object-fit:cover;
+  background:linear-gradient(135deg,#0B2545,#134074);color:#fff;font-weight:700;font-size:38px;letter-spacing:1px;box-shadow:var(--shadow)}
+.logo{height:26px;margin:0 auto 10px;display:block}
+.logo[hidden]{display:none}
+button{font-family:inherit}
+h1{font-size:23px;font-weight:700;letter-spacing:-.2px}
+.role{color:var(--ice);font-weight:600;font-size:14.5px;margin-top:2px}
+.company{color:var(--muted);font-size:13.5px;margin-top:2px}
+.tagline{margin-top:14px;font-size:14.5px;background:var(--ice-soft);border-radius:12px;padding:10px 12px}
+.actions{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px}
+.act{display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;color:var(--text);font-size:12px;font-weight:500}
+.act span.ic{width:52px;height:52px;border-radius:16px;background:var(--ice-soft);display:grid;place-items:center;color:var(--navy)}
+:root[data-theme="dark"] .act span.ic{color:var(--ice)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .act span.ic{color:var(--ice)}}
+.ic svg{width:24px;height:24px}
+.save{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:16px;padding:15px;border:0;border-radius:14px;
+  background:var(--navy);color:#fff;font-weight:600;font-size:15.5px;text-decoration:none;cursor:pointer}
+:root[data-theme="dark"] .save{background:var(--ice);color:#04121F}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .save{background:var(--ice);color:#04121F}}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);font-weight:600;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:500}
+.proj{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.proj:first-of-type{border-top:0;padding-top:0}
+.proj .num{flex:0 0 40px;height:40px;border-radius:10px;background:var(--ice-soft);color:var(--ice);display:grid;place-items:center;font-weight:700}
+.proj b{display:block;font-size:14.5px}
+.proj small{color:var(--muted);font-size:13px}
+.links a{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-top:1px solid var(--line);color:var(--text);text-decoration:none;font-weight:500;font-size:14.5px}
+.links a:first-of-type{border-top:0;padding-top:0}
+.links a::after{content:"›";color:var(--muted);font-size:20px;line-height:1}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.ghost{padding:13px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--text);font-weight:600;font-size:14px;cursor:pointer}
+footer{text-align:center;color:var(--muted);font-size:12px;margin-top:22px}
+.modal{position:fixed;inset:0;background:rgba(4,12,24,.6);display:none;align-items:center;justify-content:center;padding:16px;z-index:10}
+.modal.on{display:flex}
+.modal .box{background:#fff;color:#0F1B2D;border-radius:20px;padding:22px;text-align:center;width:100%;max-width:320px}
+#qr{width:240px;height:240px;margin:12px auto;display:block}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;font-size:13.5px;opacity:0;transition:.25s;pointer-events:none}
+.toast.on{opacity:1}
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="topbar">
+    <button class="pill" id="langBtn" aria-label="Đổi ngôn ngữ">EN</button>
+    <button class="pill" id="themeBtn" aria-label="Đổi giao diện">☾</button>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="card profile">
+    <div id="avatarBox"></div>
+    <img class="logo" id="logo" alt="NASA Engineering" hidden>
+    <h1 id="name"></h1>
+    <div class="role" id="role"></div>
+    <div class="company" id="company"></div>
+    <p class="tagline" id="tagline"></p>
+
+    <div class="actions" id="actions"></div>
+    <a class="save" href="dqd.vcf" download="Duong-Quoc-De.vcf" id="saveBtn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+      <span data-i18n="save"></span>
+    </a>
+    <div class="row2">
+      <button class="ghost" id="qrBtn" data-i18n="qr"></button>
+      <button class="ghost" id="shareBtn" data-i18n="share"></button>
+    </div>
+  </section>
+
+  <section class="card"><h2 data-i18n="expertise"></h2><div class="chips" id="chips"></div></section>
+  <section class="card"><h2 data-i18n="projects"></h2><div id="projects"></div></section>
+  <section class="card links"><h2 data-i18n="links"></h2><div id="links"></div></section>
+
+  <footer id="foot"></footer>
+</main>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="box">
+    <b data-i18n="scan"></b>
+    <canvas id="qr"></canvas>
+    <button class="ghost" id="closeQr" style="width:100%" data-i18n="close"></button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+<script>
+/* ============================================================
+   CẤU HÌNH – CHỈ SỬA TRONG KHỐI NÀY
+   Mục có [ ] là thông tin cần anh cung cấp
+   ============================================================ */
+const CONFIG = {
+  name: "Dương Quốc Đệ",
+  initials: "QĐ",
+  photo: "",                 // vd: "avatar.jpg" (ảnh vuông ≥ 400×400 px)
+  logo: "",                  // vd: "logo-nasa.svg"
+  phone: "+84000000000",     // [SĐT di động, định dạng quốc tế]
+  zalo: "84000000000",       // [SĐT Zalo, bỏ dấu +]
+  email: "email@nasa.com.vn",// [Email công việc]
+  website: "https://",       // [Website công ty]
+  linkedin: "",              // [URL LinkedIn – bỏ trống nếu không có]
+  profilePdf: "",            // [Hồ sơ năng lực PDF, vd "ho-so-nang-luc.pdf"]
+  address: "TP. Hồ Chí Minh, Việt Nam", // [Địa chỉ văn phòng]
+  vi: {
+    role: "Phó Giám đốc Kỹ thuật & Thương mại",
+    company: "Công ty TNHH Kỹ thuật và Thương mại Dịch vụ NASA",
+    tagline: "Giải pháp EPC lạnh công nghiệp, kho lạnh – cấp đông, HVAC và MEP cho nhà máy và khu công nghiệp.",
+    expertise: ["Lạnh công nghiệp","Kho lạnh – Cấp đông","HVAC & Phòng sạch","MEP / BIM Revit","Dự toán – Đấu thầu","Quản lý dự án"],
+    projects: [
+      {t:"[Tên dự án 1]", d:"[Khách hàng · quy mô, vd 5.000 m³, −25 °C]"},
+      {t:"[Tên dự án 2]", d:"[Khách hàng · quy mô]"},
+      {t:"[Tên dự án 3]", d:"[Khách hàng · quy mô]"}
+    ]
+  },
+  en: {
+    role: "Deputy Director – Engineering & Commercial",
+    company: "NASA Engineering & Trading Service Co., Ltd.",
+    tagline: "EPC solutions for industrial refrigeration, cold storage & blast freezing, HVAC and MEP.",
+    expertise: ["Industrial Refrigeration","Cold Storage & Freezing","HVAC & Cleanrooms","MEP / BIM Revit","Estimating & Tendering","Project Management"],
+    projects: [
+      {t:"[Project 1]", d:"[Client · scale]"},
+      {t:"[Project 2]", d:"[Client · scale]"},
+      {t:"[Project 3]", d:"[Client · scale]"}
+    ]
+  }
+};
+/* ============================================================ */
+
+const T = {
+  vi:{call:"Gọi",zalo:"Zalo",email:"Email",web:"Website",save:"Lưu vào danh bạ",qr:"Mã QR",share:"Chia sẻ",
+      expertise:"Lĩnh vực chuyên môn",projects:"Dự án tiêu biểu",links:"Liên kết",scan:"Quét để mở namecard",close:"Đóng",
+      profile:"Hồ sơ năng lực (PDF)",site:"Website công ty",copied:"Đã sao chép liên kết",lang:"EN"},
+  en:{call:"Call",zalo:"Zalo",email:"Email",web:"Website",save:"Save to contacts",qr:"QR code",share:"Share",
+      expertise:"Expertise",projects:"Featured projects",links:"Links",scan:"Scan to open this card",close:"Close",
+      profile:"Company profile (PDF)",site:"Company website",copied:"Link copied",lang:"VI"}
+};
+const IC = {
+  call:'<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>',
+  zalo:'<path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.9-.9L3 21l1.9-5A8.4 8.4 0 1 1 21 11.5z"/>',
+  email:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/>',
+  web:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/>'
+};
+const svg = p => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+const $ = id => document.getElementById(id);
+let lang = "vi";
+try{ const s = localStorage.getItem("lang"); if(s) lang = s; }catch(e){}
+
+function render(){
+  const L = CONFIG[lang], t = T[lang];
+  document.documentElement.lang = lang;
+  $("name").textContent = CONFIG.name;
+  $("role").textContent = L.role;
+  $("company").textContent = L.company;
+  $("tagline").textContent = L.tagline;
+  $("langBtn").textContent = t.lang;
+  document.querySelectorAll("[data-i18n]").forEach(el => el.textContent = t[el.dataset.i18n]);
+
+  $("avatarBox").innerHTML = CONFIG.photo
+    ? `<img class="avatar" src="${CONFIG.photo}" alt="${CONFIG.name}">`
+    : `<div class="avatar">${CONFIG.initials}</div>`;
+  if(CONFIG.logo){ $("logo").src = CONFIG.logo; $("logo").hidden = false; }
+
+  const acts = [
+    ["call", `tel:${CONFIG.phone}`],
+    ["zalo", `https://zalo.me/${CONFIG.zalo}`],
+    ["email", `mailto:${CONFIG.email}`],
+    ["web", CONFIG.website]
+  ];
+  $("actions").innerHTML = acts.map(([k,h]) =>
+    `<a class="act" href="${h}" ${k==="zalo"||k==="web"?'target="_blank" rel="noopener"':''}><span class="ic">${svg(IC[k])}</span>${t[k]}</a>`).join("");
+
+  $("chips").innerHTML = L.expertise.map(x => `<span class="chip">${x}</span>`).join("");
+  $("projects").innerHTML = L.projects.map((p,i) =>
+    `<div class="proj"><div class="num">${String(i+1).padStart(2,"0")}</div><div><b>${p.t}</b><small>${p.d}</small></div></div>`).join("");
+
+  const links = [];
+  if(CONFIG.profilePdf) links.push([t.profile, CONFIG.profilePdf]);
+  if(CONFIG.website && CONFIG.website !== "https://") links.push([t.site, CONFIG.website]);
+  if(CONFIG.linkedin) links.push(["LinkedIn", CONFIG.linkedin]);
+  links.push([CONFIG.address, "https://maps.google.com/?q=" + encodeURIComponent(CONFIG.address)]);
+  $("links").innerHTML = links.map(([n,h]) => `<a href="${h}" target="_blank" rel="noopener">${n}</a>`).join("");
+
+  $("foot").textContent = `© ${new Date().getFullYear()} ${CONFIG.en.company}`;
+}
+
+function toast(msg){ const el=$("toast"); el.textContent=msg; el.classList.add("on"); setTimeout(()=>el.classList.remove("on"),1800); }
+const pageUrl = () => location.href.split("#")[0].split("?")[0];
+
+$("langBtn").onclick = () => { lang = lang==="vi"?"en":"vi"; try{localStorage.setItem("lang",lang)}catch(e){} render(); };
+$("themeBtn").onclick = () => {
+  const r = document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme==="dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  r.dataset.theme = dark ? "light" : "dark";
+};
+$("qrBtn").onclick = () => {
+  if(window.QRious) new QRious({element:$("qr"), value:pageUrl(), size:480, level:"Q", foreground:"#0B2545"});
+  $("modal").classList.add("on");
+};
+$("closeQr").onclick = () => $("modal").classList.remove("on");
+$("modal").onclick = e => { if(e.target.id==="modal") $("modal").classList.remove("on"); };
+$("shareBtn").onclick = async () => {
+  const data = {title: CONFIG.name, text: CONFIG[lang].role + " – " + CONFIG[lang].company, url: pageUrl()};
+  try{
+    if(navigator.share) await navigator.share(data);
+    else { await navigator.clipboard.writeText(data.url); toast(T[lang].copied); }
+  }catch(e){}
+};
+
+render();
+if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(()=>{});
+</script>
+</body>
+</html>
