@@ -149,7 +149,6 @@ const CONFIG = {
   website: "https://nasa-tech.com.vn",
   linkedin: "",              // [URL LinkedIn – bỏ trống nếu không có]
   profilePdf: "ho-so-nang-luc-NASA.pdf",
-  hotline: "+84918749160",
   address: "52 Trần Quang Cơ, P. Phú Thạnh, TP. Hồ Chí Minh",
   mapsUrl: "https://maps.app.goo.gl/TMoWxoE8T75GcMRr8",
   vi: {
@@ -250,7 +249,6 @@ function render(){
   links.push([CONFIG.email, "mailto:" + CONFIG.email]);
   if(CONFIG.email2) links.push([CONFIG.email2, "mailto:" + CONFIG.email2]);
   links.push(["0936 973 604", "tel:" + CONFIG.phone]);
-  links.push([t.hotline + " · 0918 749 160", "tel:" + CONFIG.hotline]);
   $("links").innerHTML = links.map(([n,h]) => `<a href="${h}" target="_blank" rel="noopener">${n}</a>`).join("");
   const q = a => "https://maps.google.com/?q=" + encodeURIComponent(a);
   const offices = [
