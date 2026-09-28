@@ -171,6 +171,7 @@ const CONFIG = {
     ]
   },
   en: {
+    name: "Duong Quoc De",
     role: "Deputy Business Director",
     company: "NASA Engineering and Trading Service Company Limited",
     tagline: "Turnkey solutions for industrial refrigeration, cold storage & freezing, HVAC and MEP for processing plants and industrial parks.",
@@ -214,7 +215,8 @@ try{ const s = localStorage.getItem("lang"); if(s) lang = s; }catch(e){}
 function render(){
   const L = CONFIG[lang], t = T[lang];
   document.documentElement.lang = lang;
-  $("name").textContent = CONFIG.name;
+  $("name").textContent = L.name || CONFIG.name;
+  document.title = (L.name || CONFIG.name) + " | NASA Engineering";
   $("role").textContent = L.role;
   $("company").textContent = L.company;
   $("tagline").textContent = L.tagline;
@@ -222,7 +224,7 @@ function render(){
   document.querySelectorAll("[data-i18n]").forEach(el => el.textContent = t[el.dataset.i18n]);
 
   $("avatarBox").innerHTML = CONFIG.photo
-    ? `<img class="avatar" src="${CONFIG.photo}" alt="${CONFIG.name}">`
+    ? `<img class="avatar" src="${CONFIG.photo}" alt="${L.name || CONFIG.name}">`
     : `<div class="avatar">${CONFIG.initials}</div>`;
   if(CONFIG.logo){ $("logo").src = CONFIG.logo; $("logo").hidden = false; }
 
@@ -277,7 +279,7 @@ $("qrBtn").onclick = () => {
 $("closeQr").onclick = () => $("modal").classList.remove("on");
 $("modal").onclick = e => { if(e.target.id==="modal") $("modal").classList.remove("on"); };
 $("shareBtn").onclick = async () => {
-  const data = {title: CONFIG.name, text: CONFIG[lang].role + " – " + CONFIG[lang].company, url: pageUrl()};
+  const data = {title: CONFIG[lang].name || CONFIG.name, text: CONFIG[lang].role + " – " + CONFIG[lang].company, url: pageUrl()};
   try{
     if(navigator.share) await navigator.share(data);
     else { await navigator.clipboard.writeText(data.url); toast(T[lang].copied); }
