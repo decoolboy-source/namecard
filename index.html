@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="apple-mobile-web-app-title" content="Quốc Đệ">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta property="og:image" content="icon-512.png">
+<meta property="og:image" content="https://decoolboy-source.github.io/namecard/icon-512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -148,12 +148,13 @@ const CONFIG = {
   phone: "+84936973604",
   zalo: "0936973604",
   email: "dedq@nasa-tech.com.vn",
-  email2: "dehvacr@gmail.com",
   website: "https://nasa-tech.com.vn",
   linkedin: "",              // [URL LinkedIn – bỏ trống nếu không có]
   profilePdf: "ho-so-nang-luc-NASA.pdf",
   address: "52 Trần Quang Cơ, P. Phú Thạnh, TP. Hồ Chí Minh",
   mapsUrl: "https://maps.app.goo.gl/TMoWxoE8T75GcMRr8",
+  showroom: "Lô DH, KCN Trần Quốc Toản, P. Mỹ Ngãi, Đồng Tháp",
+  factory: "Lô G19, đường N3, KCN Nam Thuận, xã Mỹ Hạnh, Tây Ninh",
   vi: {
     role: "Phó Giám đốc Kinh doanh",
     company: "Công ty TNHH Kỹ thuật và Thương mại Dịch vụ NASA",
@@ -162,36 +163,18 @@ const CONFIG = {
     projSummary: "24 dự án tại 9 tỉnh/thành và Myanmar (2004–2024)",
     products: ["Hệ thống lạnh công nghiệp","IQF băng lưới / băng thép","Tủ đông tiếp xúc","Tủ đông gió","Máy mạ băng, tái đông","Chiller sữa – đồ uống","Thiết bị chế biến thủy sản","Kho lạnh – Panel PIR/PU","Điện mặt trời"],
     services: "Tư vấn → Thiết kế → Chế tạo → Lắp đặt → Chuyển giao công nghệ",
-    projects: [
-      {t:"Vĩnh Hoàn Corporation", d:"Đồng Tháp · 2014–2021"},
-      {t:"Hùng Cá", d:"Đồng Tháp · 2004–2022"},
-      {t:"DH Logistic – Daiwa House VN (Meito, New Land)", d:"Long An · 2022"},
-      {t:"Nha Trang Seafood (NTFS)", d:"Cần Thơ · 2020–2022"},
-      {t:"Thông Thuận Milk JSC", d:"Bình Thuận · 2024"},
-      {t:"HappyFood Việt Nam", d:"Đồng Tháp · 2024"},
-      {t:"ITL Logistic Đà Nẵng (Indo Trần)", d:"Đà Nẵng · 2023"},
-      {t:"Global Earth Agro & Aqua", d:"Myanmar · 2021"}
-    ]
+    projects: []   // Chờ số liệu: loại hình + m³/kW/°C, không tên chủ đầu tư (SOP mục 3)
   },
   en: {
     name: "Duong Quoc De",
     role: "Deputy Business Director",
-    company: "NASA Engineering and Trading Service Company Limited",
+    company: "NASA Engineering & Trading Service Co., Ltd.",
     tagline: "Turnkey solutions for industrial refrigeration, cold storage & freezing, HVAC and MEP for processing plants and industrial parks.",
     expertise: ["Industrial Refrigeration","Cold Storage & IQF Freezing","HVAC & Ventilation","MEP / BIM Revit","Estimating & Tendering","Solar Power"],
     projSummary: "24 projects across 9 provinces of Vietnam and Myanmar (2004–2024)",
     products: ["Industrial refrigeration","IQF mesh / steel belt","Contact freezers","Air blast freezers","Glazing & re-freezers","Dairy & beverage chillers","Seafood processing equipment","Cold storage – PIR/PU panels","Solar power"],
     services: "Consulting → Design → Manufacturing → Installation → Technology transfer",
-    projects: [
-      {t:"Vinh Hoan Corporation", d:"Dong Thap · 2014–2021"},
-      {t:"Hung Ca Factories", d:"Dong Thap · 2004–2022"},
-      {t:"DH Logistic – Daiwa House VN (Meito, New Land)", d:"Long An · 2022"},
-      {t:"Nha Trang Seafood (NTFS)", d:"Can Tho · 2020–2022"},
-      {t:"Thong Thuan Milk JSC", d:"Binh Thuan · 2024"},
-      {t:"HappyFood Vietnam", d:"Dong Thap · 2024"},
-      {t:"ITL Logistic Danang (Indo Tran)", d:"Da Nang · 2023"},
-      {t:"Global Earth Agro & Aqua", d:"Myanmar · 2021"}
-    ]
+    projects: []   // Chờ số liệu: loại hình + m³/kW/°C, không tên chủ đầu tư (SOP mục 3)
   }
 };
 /* ============================================================ */
@@ -244,7 +227,7 @@ function render(){
   $("products").innerHTML = L.products.map(x => `<span class="chip">${x}</span>`).join("");
   $("services").textContent = L.services;
   $("projSummary").textContent = L.projSummary;
-  $("projects").innerHTML = L.projects.map((p,i) =>
+  $("projects").innerHTML = (L.projects||[]).map((p,i) =>
     `<div class="proj"><div class="num">${String(i+1).padStart(2,"0")}</div><div><b>${p.t}</b><small>${p.d}</small></div></div>`).join("");
 
   const links = [];
@@ -258,8 +241,8 @@ function render(){
   const q = a => "https://maps.google.com/?q=" + encodeURIComponent(a);
   const offices = [
     [t.hq, CONFIG.address, CONFIG.mapsUrl],
-    [t.showroom, "Lô DH, KCN Trần Quốc Toản, P. Mỹ Ngãi, Đồng Tháp", null],
-    [t.factory, "Lô G19, đường N3, KCN Nam Thuận, xã Mỹ Hạnh, Tây Ninh", null]
+    [t.showroom, CONFIG.showroom, null],
+    [t.factory, CONFIG.factory, null]
   ];
   $("offices").innerHTML = offices.map(([k,a,u]) => `<a href="${u||q(a)}" target="_blank" rel="noopener"><span><small>${k}</small>${a}</span></a>`).join("");
 
