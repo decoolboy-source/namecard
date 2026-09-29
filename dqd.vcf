@@ -6,8 +6,7 @@ ORG;CHARSET=UTF-8:Công ty TNHH Kỹ thuật và Thương mại Dịch vụ NASA
 TITLE;CHARSET=UTF-8:Phó Giám đốc Kinh doanh
 TEL;TYPE=CELL,VOICE,pref:+84936973604
 EMAIL;TYPE=WORK,INTERNET,pref:dedq@nasa-tech.com.vn
-EMAIL;TYPE=HOME,INTERNET:dehvacr@gmail.com
-URL:https://nasa-tech.com.vn
+URL:https://decoolboy-source.github.io/namecard/
 ADR;TYPE=WORK;CHARSET=UTF-8:;;52 Trần Quang Cơ, P. Phú Thạnh;TP. Hồ Chí Minh;;;Việt Nam
 NOTE;CHARSET=UTF-8:Lạnh công nghiệp · Kho lạnh – Cấp đông · HVAC · MEP. Zalo: 0936973604. MST: 0317058785
 PHOTO;ENCODING=b;TYPE=JPEG:/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYH

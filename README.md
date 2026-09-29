@@ -8,4 +8,4 @@ Trang namecard PWA tĩnh, host trên GitHub Pages.
 | `dqd.vcf` | vCard 3.0 (UTF-8) cho nút "Lưu vào danh bạ" – cập nhật đồng bộ với CONFIG |
 | `manifest.webmanifest`, `sw.js`, `icon-*.png` (ảnh đại diện) | PWA: cài lên màn hình chính, xem offline |
 
-Sau khi đổi nội dung, tăng số phiên bản cache `dqd-card-v1` trong `sw.js` để máy người xem nhận bản mới.
+Mọi thay đổi theo SOP Namecard điện tử (mục 4). Hằng số cache trong `sw.js` đặt trùng số phiên bản phát hành, ví dụ `dqd-card-v1.0` → `dqd-card-v2.0`.
