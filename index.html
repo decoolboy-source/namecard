@@ -300,8 +300,19 @@ async function buildQrCard(){
   x.fillStyle = "#5B6B80"; fitText(x, L.company, W - 140, 30, 500); x.fillText(L.company, W / 2, y + 175);
   const qs = 640, qy = y + 240;
   const qc = document.createElement("canvas");
-  if(window.QRious) new QRious({ element: qc, value: url, size: qs, level: "Q", foreground: "#0B2545", background: "#FFFFFF", padding: 0 });
+  if(window.QRious) new QRious({ element: qc, value: url, size: qs, level: "H", foreground: "#0B2545", background: "#FFFFFF", padding: 0 });
   x.drawImage(qc, (W - qs) / 2, qy, qs, qs);
+  /* Ảnh chân dung giữa mã: đường kính 22% cạnh QR, mức sửa lỗi H (30%) */
+  const av = CONFIG.photo ? await loadImg(CONFIG.photo) : null;
+  if(av){
+    const d = Math.round(qs * 0.22), cx = W / 2, cy = qy + qs / 2, r = d / 2;
+    x.fillStyle = "#FFFFFF"; x.beginPath(); x.arc(cx, cy, r + 12, 0, Math.PI * 2); x.fill();
+    x.save(); x.beginPath(); x.arc(cx, cy, r, 0, Math.PI * 2); x.clip();
+    const sq = Math.min(av.width, av.height);
+    x.drawImage(av, (av.width - sq) / 2, (av.height - sq) / 2, sq, sq, cx - r, cy - r, d, d);
+    x.restore();
+    x.strokeStyle = "#0B2545"; x.lineWidth = 4; x.beginPath(); x.arc(cx, cy, r + 2, 0, Math.PI * 2); x.stroke();
+  }
   x.fillStyle = "#0F1B2D"; fitText(x, t.qrCaption, W - 160, 34, 600); x.fillText(t.qrCaption, W / 2, qy + qs + 70);
   x.fillStyle = "#5B6B80"; fitText(x, url.replace(/^https?:\/\//, ""), W - 160, 28, 500); x.fillText(url.replace(/^https?:\/\//, ""), W / 2, qy + qs + 116);
   qrBlob = await new Promise(ok => c.toBlob(ok, "image/png"));
