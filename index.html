@@ -9,135 +9,169 @@
 <meta property="og:title" content="Dương Quốc Đệ – NASA Engineering">
 <meta property="og:description" content="Lạnh công nghiệp · Kho lạnh – Cấp đông · HVAC · MEP">
 <meta property="og:type" content="profile">
+<meta property="og:image" content="https://decoolboy-source.github.io/namecard/icon-512.png">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="apple-mobile-web-app-title" content="Quốc Đệ">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta property="og:image" content="https://decoolboy-source.github.io/namecard/icon-512.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/bvp-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/bvp-vi-600.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+/* Be Vietnam Pro (SIL OFL 1.1) – tự host, không phụ thuộc Google Fonts */
+@font-face{font-family:"BVP";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/bvp-vi-400.woff2) format("woff2");unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:"BVP";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/bvp-latin-400.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"BVP";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/bvp-vi-600.woff2) format("woff2");unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:"BVP";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/bvp-latin-600.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"BVP";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/bvp-vi-700.woff2) format("woff2");unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:"BVP";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/bvp-latin-700.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
 :root{
-  --navy:#0B2545; --ice:#13A8D8; --ice-soft:#E6F6FC;
-  --bg:#F3F6FA; --card:#FFFFFF; --text:#0F1B2D; --muted:#5B6B80; --line:#E2E8F0;
-  --shadow:0 10px 30px rgba(11,37,69,.10);
+  --navy:#0B2545; --navy2:#13315C; --ice:#1597C9; --ice-soft:#EAF5FA;
+  --bg:#F2F4F7; --card:#FFFFFF; --text:#0F1B2D; --muted:#5B6B80; --line:#E3E8EF;
+  --cta:#0B2545; --cta-text:#FFFFFF;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#07111F; --card:#0F1D31; --text:#E8EEF6; --muted:#93A3B8; --line:#1E2E45; --ice-soft:#0E2A3D;
-    --shadow:0 10px 30px rgba(0,0,0,.35);
+    --bg:#081221; --card:#0F1D31; --text:#E8EEF6; --muted:#94A4B8; --line:#1D2D44; --ice:#3DB7E4; --ice-soft:#10293D;
+    --cta:#3DB7E4; --cta-text:#04121F;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#07111F; --card:#0F1D31; --text:#E8EEF6; --muted:#93A3B8; --line:#1E2E45; --ice-soft:#0E2A3D;
-  --shadow:0 10px 30px rgba(0,0,0,.35);
+  --bg:#081221; --card:#0F1D31; --text:#E8EEF6; --muted:#94A4B8; --line:#1D2D44; --ice:#3DB7E4; --ice-soft:#10293D;
+  --cta:#3DB7E4; --cta-text:#04121F;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Be Vietnam Pro",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased}
-.wrap{max-width:460px;margin:0 auto;padding:0 16px 40px}
-.cover{height:150px;background:linear-gradient(135deg,#0B2545 0%,#134074 55%,#13A8D8 100%);position:relative;overflow:hidden}
-.cover::after{content:"";position:absolute;inset:0;background:
-  radial-gradient(circle at 85% 20%,rgba(255,255,255,.18) 0 2px,transparent 3px) 0 0/28px 28px;opacity:.6}
-.topbar{position:absolute;top:12px;right:12px;display:flex;gap:8px;z-index:2}
-.pill{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);color:#fff;font-weight:600;font-size:12px;line-height:1;padding:8px 12px;border-radius:999px;cursor:pointer;backdrop-filter:blur(6px)}
-.card{background:var(--card);border-radius:20px;box-shadow:var(--shadow);padding:20px;margin-top:16px}
-.profile{margin-top:-60px;position:relative;text-align:center;padding-top:0}
-.avatar{width:120px;height:120px;border-radius:50%;border:4px solid var(--card);margin:-60px auto 12px;display:grid;place-items:center;object-fit:cover;
-  background:linear-gradient(135deg,#0B2545,#134074);color:#fff;font-weight:700;font-size:38px;letter-spacing:1px;box-shadow:var(--shadow)}
-.logo{height:64px;margin:0 auto 10px;display:block;background:#fff;border-radius:10px;padding:4px 8px;box-sizing:content-box}
-.logo[hidden]{display:none}
+html{-webkit-text-size-adjust:100%}
+body{font-family:"BVP",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
 button{font-family:inherit}
-h1{font-size:23px;font-weight:700;letter-spacing:-.2px}
-.role{color:var(--ice);font-weight:600;font-size:14.5px;margin-top:2px}
-.company{color:var(--muted);font-size:13.5px;margin-top:2px}
-.tagline{margin-top:14px;font-size:14.5px;background:var(--ice-soft);border-radius:12px;padding:10px 12px}
-.actions{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px}
-.act{display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;color:var(--text);font-size:12px;font-weight:500}
-.act span.ic{width:52px;height:52px;border-radius:16px;background:var(--ice-soft);display:grid;place-items:center;color:var(--navy)}
-:root[data-theme="dark"] .act span.ic{color:var(--ice)}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .act span.ic{color:var(--ice)}}
-.ic svg{width:24px;height:24px}
-.save{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:16px;padding:15px;border:0;border-radius:14px;
-  background:var(--navy);color:#fff;font-weight:600;font-size:15.5px;text-decoration:none;cursor:pointer}
-:root[data-theme="dark"] .save{background:var(--ice);color:#04121F}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .save{background:var(--ice);color:#04121F}}
-h2{font-size:13px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);font-weight:600;margin-bottom:12px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:500}
-.svc{font-size:13.5px;font-weight:600;color:var(--ice);margin-bottom:12px}
-.sum{font-size:13.5px;color:var(--muted);margin:-4px 0 12px}
-.proj{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
-.proj:first-of-type{border-top:0;padding-top:0}
-.proj .num{flex:0 0 40px;height:40px;border-radius:10px;background:var(--ice-soft);color:var(--ice);display:grid;place-items:center;font-weight:700}
-.proj b{display:block;font-size:14.5px}
-.proj small{color:var(--muted);font-size:13px}
-.links a{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-top:1px solid var(--line);color:var(--text);text-decoration:none;font-weight:500;font-size:14.5px}
-.links a:first-of-type{border-top:0;padding-top:0}
-.links small{display:block;color:var(--muted);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.6px}
-.links a::after{content:"›";color:var(--muted);font-size:20px;line-height:1}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
-.ghost{padding:13px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--text);font-weight:600;font-size:14px;cursor:pointer}
-footer{text-align:center;color:var(--muted);font-size:12px;margin-top:22px}
-.modal{position:fixed;inset:0;background:rgba(4,12,24,.6);display:none;align-items:center;justify-content:center;padding:16px;z-index:10}
+.wrap{max-width:460px;margin:0 auto;padding:0 16px calc(96px + env(safe-area-inset-bottom))}
+
+/* Thanh trên: logo + ngôn ngữ/giao diện */
+.top{display:flex;align-items:center;justify-content:space-between;padding:14px 0 12px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none}
+.brand img{height:34px;width:auto;background:#fff;border-radius:8px;padding:3px 5px;box-sizing:content-box;border:1px solid var(--line)}
+.brand span{font-size:11px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);line-height:1.3}
+.tools{display:flex;gap:6px}
+.tbtn{height:32px;min-width:40px;padding:0 10px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:12px;font-weight:600;cursor:pointer}
+
+/* Khối nhận diện */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;border-radius:18px;padding:22px 20px 20px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(255,255,255,.08)}
+.id{display:flex;gap:16px;align-items:center}
+.avatar{flex:0 0 84px;width:84px;height:84px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.85);background:#13315C;display:grid;place-items:center;font-weight:700;font-size:28px;color:#fff}
+.id h1{font-size:22px;font-weight:700;letter-spacing:-.2px;line-height:1.25}
+.role{margin-top:4px;font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:#8FD3EF}
+.company{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.14);font-size:13.5px;font-weight:600;color:#fff}
+.tagline{margin-top:4px;font-size:13px;color:rgba(255,255,255,.72)}
+
+/* Liên hệ */
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:12px}
+h2{font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.contact{padding:4px 18px}
+.crow{display:flex;align-items:center;gap:14px;padding:12px 0;border-top:1px solid var(--line);color:var(--text);text-decoration:none}
+.crow:first-child{border-top:0}
+.cic{flex:0 0 38px;height:38px;border-radius:10px;background:var(--ice-soft);color:var(--ice);display:grid;place-items:center}
+.cic svg{width:19px;height:19px}
+.crow small{display:block;font-size:11.5px;color:var(--muted);line-height:1.3}
+.crow b{display:block;font-size:15px;font-weight:600;line-height:1.35;word-break:break-word}
+.crow .go{margin-left:auto;color:var(--muted);font-size:18px}
+
+/* Số liệu */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.stat{background:var(--ice-soft);border-radius:12px;padding:12px 10px}
+.stat b{display:block;font-size:24px;font-weight:700;line-height:1;color:var(--text)}
+.stat span{display:block;margin-top:6px;font-size:11.5px;line-height:1.3;color:var(--muted)}
+.proj{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:11px 0;border-top:1px solid var(--line)}
+.proj:first-of-type{border-top:0;padding-top:2px}
+.proj b{display:block;font-size:14.5px;font-weight:600}
+.proj small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.proj em{font-style:normal;font-size:20px;font-weight:700;color:var(--ice);flex:0 0 auto}
+.more{display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);color:var(--text);text-decoration:none;font-weight:600;font-size:14px}
+
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:13px;font-weight:500}
+.steps{display:flex;flex-wrap:wrap;gap:4px 0;font-size:12.5px;font-weight:600;color:var(--ice);margin-bottom:12px}
+.steps span:not(:last-child)::after{content:"›";margin:0 7px;color:var(--muted)}
+.plist{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.plist li{list-style:none;font-size:13.5px;padding:8px 0;border-top:1px solid var(--line)}
+.plist li:nth-child(-n+2){border-top:0;padding-top:0}
+
+.office{padding:10px 0;border-top:1px solid var(--line);display:block;color:var(--text);text-decoration:none}
+.office:first-of-type{border-top:0;padding-top:0}
+.office small{display:block;font-size:11.5px;color:var(--muted);font-weight:600;letter-spacing:.6px;text-transform:uppercase}
+.office span{font-size:14px;font-weight:500}
+footer{text-align:center;color:var(--muted);font-size:11.5px;margin-top:20px;line-height:1.6}
+
+/* Thanh hành động cố định */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:5;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
+.dock .in{max-width:428px;margin:0 auto;display:grid;grid-template-columns:1fr 52px 52px;gap:8px}
+.save{display:flex;align-items:center;justify-content:center;gap:8px;height:50px;border-radius:12px;background:var(--cta);color:var(--cta-text);font-weight:600;font-size:15px;text-decoration:none;border:0}
+.ibtn{height:50px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--text);display:grid;place-items:center;cursor:pointer}
+.ibtn svg,.save svg{width:20px;height:20px}
+
+/* Hộp QR */
+.modal{position:fixed;inset:0;background:rgba(4,12,24,.62);display:none;align-items:center;justify-content:center;padding:16px;z-index:10}
 .modal.on{display:flex}
-.modal .box{background:#fff;color:#0F1B2D;border-radius:20px;padding:18px;text-align:center;width:100%;max-width:340px;max-height:100%;overflow:auto}
-#qrImg{width:100%;max-width:300px;aspect-ratio:4/5;margin:6px auto 4px;display:block;border-radius:12px;border:1px solid #E2E8F0;background:#fff;-webkit-touch-callout:default}
+.box{background:#fff;color:#0F1B2D;border-radius:18px;padding:16px;text-align:center;width:100%;max-width:340px;max-height:100%;overflow:auto}
+#qrImg{width:100%;max-width:300px;aspect-ratio:4/5;margin:0 auto 6px;display:block;border-radius:10px;border:1px solid #E3E8EF;background:#fff;-webkit-touch-callout:default}
 .hint{font-size:12px;color:#5B6B80;margin-bottom:12px}
-.box .row2{margin-top:0}
-.box .ghost{background:#fff;color:#0F1B2D;border-color:#E2E8F0}
-.box .primary{background:#0B2545;color:#fff;border-color:#0B2545}
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;font-size:13.5px;opacity:0;transition:.25s;pointer-events:none}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ghost{height:46px;border-radius:12px;border:1px solid #E3E8EF;background:#fff;color:#0F1B2D;font-weight:600;font-size:14px;cursor:pointer}
+.primary{background:#0B2545;color:#fff;border-color:#0B2545}
+.toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%);background:#0B2545;color:#fff;padding:10px 16px;border-radius:10px;font-size:13.5px;opacity:0;transition:.25s;pointer-events:none;z-index:11}
 .toast.on{opacity:1}
 </style>
 </head>
 <body>
-<div class="cover">
-  <div class="topbar">
-    <button class="pill" id="langBtn" aria-label="Đổi ngôn ngữ">EN</button>
-    <button class="pill" id="themeBtn" aria-label="Đổi giao diện">☾</button>
-  </div>
-</div>
-
 <main class="wrap">
-  <section class="card profile">
-    <div id="avatarBox"></div>
-    <img class="logo" id="logo" alt="NASA Engineering" hidden>
-    <h1 id="name"></h1>
-    <div class="role" id="role"></div>
+  <div class="top">
+    <a class="brand" id="brand" target="_blank" rel="noopener"><img id="logo" alt="NASA"><span>NASA<br>Engineering &amp; Trading</span></a>
+    <div class="tools">
+      <button class="tbtn" id="langBtn" aria-label="Đổi ngôn ngữ">EN</button>
+      <button class="tbtn" id="themeBtn" aria-label="Đổi giao diện">☾</button>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="id">
+      <div id="avatarBox"></div>
+      <div><h1 id="name"></h1><div class="role" id="role"></div></div>
+    </div>
     <div class="company" id="company"></div>
     <p class="tagline" id="tagline"></p>
-
-    <div class="actions" id="actions"></div>
-    <a class="save" href="dqd.vcf" download="Duong-Quoc-De.vcf" id="saveBtn">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
-      <span data-i18n="save"></span>
-    </a>
-    <div class="row2">
-      <button class="ghost" id="qrBtn" data-i18n="qr"></button>
-      <button class="ghost" id="shareBtn" data-i18n="share"></button>
-    </div>
   </section>
 
+  <section class="card contact" id="contact"></section>
+
+  <section class="card"><h2 data-i18n="projects"></h2><div class="stats" id="stats"></div><div id="projects"></div><a class="more" id="pdf" target="_blank" rel="noopener"><span data-i18n="profile"></span><span>›</span></a></section>
   <section class="card"><h2 data-i18n="expertise"></h2><div class="chips" id="chips"></div></section>
-  <section class="card"><h2 data-i18n="products"></h2><p class="svc" id="services"></p><div class="chips" id="products"></div></section>
-  <section class="card"><h2 data-i18n="projects"></h2><p class="sum" id="projSummary"></p><div id="projects"></div></section>
-  <section class="card links"><h2 data-i18n="links"></h2><div id="links"></div></section>
-  <section class="card links"><h2 data-i18n="offices"></h2><div id="offices"></div></section>
+  <section class="card"><h2 data-i18n="products"></h2><div class="steps" id="services"></div><ul class="plist" id="products"></ul></section>
+  <section class="card"><h2 data-i18n="offices"></h2><div id="offices"></div></section>
 
   <footer id="foot"></footer>
 </main>
 
+<nav class="dock">
+  <div class="in">
+    <a class="save" href="dqd.vcf" download="Duong-Quoc-De.vcf" id="saveBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+      <span data-i18n="save"></span>
+    </a>
+    <button class="ibtn" id="qrBtn" aria-label="QR"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 17h4v4h-4"/></svg></button>
+    <button class="ibtn" id="shareBtn" aria-label="Share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg></button>
+  </div>
+</nav>
+
 <div class="modal" id="modal" role="dialog" aria-modal="true">
   <div class="box">
-    <b data-i18n="scan"></b>
     <img id="qrImg" alt="QR">
     <p class="hint" data-i18n="hold"></p>
     <div class="row2">
       <button class="ghost primary" id="shareQr" data-i18n="shareQr"></button>
       <button class="ghost" id="saveQr" data-i18n="saveQr"></button>
     </div>
-    <button class="ghost" id="closeQr" style="width:100%;margin-top:10px" data-i18n="close"></button>
+    <button class="ghost" id="closeQr" style="width:100%;margin-top:8px" data-i18n="close"></button>
   </div>
 </div>
 <div class="toast" id="toast"></div>
@@ -145,38 +179,38 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:22px}
 <script src="qrious.min.js"></script>
 <script>
 /* ============================================================
-   CẤU HÌNH – CHỈ SỬA TRONG KHỐI NÀY
-   Mục có [ ] là thông tin cần anh cung cấp
+   CẤU HÌNH – CHỈ SỬA TRONG KHỐI NÀY (đồng bộ SOP mục 3)
    ============================================================ */
 const CONFIG = {
   name: "Dương Quốc Đệ",
   initials: "QĐ",
   photo: "avatar.jpg",
   logo: "logo-nasa.png",
+  cardUrl: "https://decoolboy-source.github.io/namecard/",   // URL chính thức – nội dung mã QR
   taxId: "0317058785",
   phone: "+84936973604",
+  phoneText: "0936 973 604",
   zalo: "0936973604",
   email: "dedq@nasa-tech.com.vn",
   website: "https://nasa-tech.com.vn",
-  linkedin: "",              // [URL LinkedIn – bỏ trống nếu không có]
+  linkedin: "",
   profilePdf: "ho-so-nang-luc-NASA.pdf",
   address: "52 Trần Quang Cơ, P. Phú Thạnh, TP. Hồ Chí Minh",
   mapsUrl: "https://maps.app.goo.gl/TMoWxoE8T75GcMRr8",
-  showroom: "Lô DH, KCN Trần Quốc Toản, P. Mỹ Ngãi, Đồng Tháp",
   factory: "Lô G19, đường N3, KCN Nam Thuận, xã Mỹ Hạnh, Tây Ninh",
   vi: {
     role: "Phó Giám đốc Kinh doanh",
     company: "Công ty TNHH Kỹ thuật và Thương mại Dịch vụ NASA",
     tagline: "Giải pháp trọn gói (turnkey) lạnh công nghiệp, kho lạnh – cấp đông, HVAC và MEP cho nhà máy chế biến và khu công nghiệp.",
     expertise: ["Lạnh công nghiệp","Kho lạnh – Cấp đông IQF","HVAC & Thông gió","MEP / BIM Revit","Dự toán – Đấu thầu","Điện mặt trời"],
-    projSummary: "24 dự án tại 9 tỉnh/thành và Myanmar (2004\u2060–\u20602024)",
+    stats: [["24","dự án tiêu biểu"],["9","tỉnh/thành Việt Nam"],["1","dự án quốc tế (Myanmar)"]],
     products: ["Hệ thống lạnh công nghiệp","IQF băng lưới / băng thép","Tủ đông tiếp xúc","Tủ đông gió","Máy mạ băng, tái đông","Chiller sữa – đồ uống","Thiết bị chế biến thủy sản","Kho lạnh – Panel PIR/PU","Điện mặt trời"],
-    services: "Tư vấn → Thiết kế → Chế tạo → Lắp đặt → Chuyển giao công nghệ",
+    services: ["Tư vấn","Thiết kế","Chế tạo","Lắp đặt","Chuyển giao công nghệ"],
     projects: [
-      {t:"Nhà máy chế biến thủy sản", d:"15 dự án · Đồng Tháp, Cần Thơ, An Giang, Long An, Trà Vinh, Vĩnh Long, Myanmar · 2004\u2060–\u20602022"},
-      {t:"Kho lạnh logistics", d:"4 dự án · Long An, Hậu Giang, Đà Nẵng · 2015\u2060–\u20602023"},
-      {t:"Chế biến nông sản – thực phẩm", d:"4 dự án · Đồng Tháp, An Giang · 2019\u2060–\u20602024"},
-      {t:"Nhà máy sữa – đồ uống", d:"1 dự án · Bình Thuận · 2024"}
+      {t:"Nhà máy chế biến thủy sản", d:"Đồng Tháp, Cần Thơ, An Giang, Long An, Trà Vinh, Vĩnh Long, Myanmar · 2004⁠–⁠2022", n:15},
+      {t:"Kho lạnh logistics", d:"Long An, Hậu Giang, Đà Nẵng · 2015⁠–⁠2023", n:4},
+      {t:"Chế biến nông sản – thực phẩm", d:"Đồng Tháp, An Giang · 2019⁠–⁠2024", n:4},
+      {t:"Nhà máy sữa – đồ uống", d:"Bình Thuận · 2024", n:1}
     ]
   },
   en: {
@@ -185,26 +219,26 @@ const CONFIG = {
     company: "NASA Engineering and Trading Service Co., Ltd.",
     tagline: "Turnkey solutions for industrial refrigeration, cold storage & freezing, HVAC and MEP for processing plants and industrial parks.",
     expertise: ["Industrial Refrigeration","Cold Storage & IQF Freezing","HVAC & Ventilation","MEP / BIM Revit","Estimating & Tendering","Solar Power"],
-    projSummary: "24 projects across 9 provinces of Vietnam and Myanmar (2004\u2060–\u20602024)",
+    stats: [["24","featured projects"],["9","provinces of Vietnam"],["1","international project (Myanmar)"]],
     products: ["Industrial refrigeration","IQF mesh / steel belt","Contact freezers","Air blast freezers","Glazing & re-freezers","Dairy & beverage chillers","Seafood processing equipment","Cold storage – PIR/PU panels","Solar power"],
-    services: "Consulting → Design → Manufacturing → Installation → Technology transfer",
+    services: ["Consulting","Design","Manufacturing","Installation","Technology transfer"],
     projects: [
-      {t:"Seafood processing plants", d:"15 projects · Dong Thap, Can Tho, An Giang, Long An, Tra Vinh, Vinh Long, Myanmar · 2004\u2060–\u20602022"},
-      {t:"Logistics cold storage", d:"4 projects · Long An, Hau Giang, Da Nang · 2015\u2060–\u20602023"},
-      {t:"Agricultural & food processing", d:"4 projects · Dong Thap, An Giang · 2019\u2060–\u20602024"},
-      {t:"Dairy & beverage plant", d:"1 project · Binh Thuan · 2024"}
+      {t:"Seafood processing plants", d:"Dong Thap, Can Tho, An Giang, Long An, Tra Vinh, Vinh Long, Myanmar · 2004⁠–⁠2022", n:15},
+      {t:"Logistics cold storage", d:"Long An, Hau Giang, Da Nang · 2015⁠–⁠2023", n:4},
+      {t:"Agricultural & food processing", d:"Dong Thap, An Giang · 2019⁠–⁠2024", n:4},
+      {t:"Dairy & beverage plant", d:"Binh Thuan · 2024", n:1}
     ]
   }
 };
 /* ============================================================ */
 
 const T = {
-  vi:{call:"Gọi",zalo:"Zalo",email:"Email",web:"Website",save:"Lưu vào danh bạ",qr:"Mã QR",share:"Chia sẻ",
-      expertise:"Lĩnh vực chuyên môn",projects:"Dự án tiêu biểu",links:"Liên kết",scan:"Quét để mở namecard",close:"Đóng",shareQr:"Chia sẻ mã QR",saveQr:"Lưu ảnh",hold:"Nhấn giữ ảnh để lưu vào máy",qrCaption:"Quét để xem namecard và lưu liên hệ",
-      profile:"Hồ sơ năng lực (PDF)",products:"Sản phẩm & Dịch vụ",offices:"Văn phòng & Nhà máy",hq:"Trụ sở chính",showroom:"Showroom",factory:"Chi nhánh – Nhà máy",site:"Website công ty",copied:"Đã sao chép liên kết",lang:"EN"},
-  en:{call:"Call",zalo:"Zalo",email:"Email",web:"Website",save:"Save to contacts",qr:"QR code",share:"Share",
-      expertise:"Expertise",projects:"Featured projects",links:"Links",scan:"Scan to open this card",close:"Close",shareQr:"Share QR",saveQr:"Save image",hold:"Press and hold the image to save",qrCaption:"Scan to view the card and save contact",
-      profile:"Company profile (PDF)",products:"Products & Services",offices:"Offices & Factory",hq:"Head office",showroom:"Showroom",factory:"Branch – Factory",site:"Company website",copied:"Link copied",lang:"VI"}
+  vi:{call:"Điện thoại",zalo:"Zalo",email:"Email",web:"Website",save:"Lưu vào danh bạ",
+      expertise:"Lĩnh vực chuyên môn",projects:"Dự án tiêu biểu",close:"Đóng",shareQr:"Chia sẻ mã QR",saveQr:"Lưu ảnh",hold:"Nhấn giữ ảnh để lưu vào máy",qrCaption:"Quét để xem namecard và lưu liên hệ",
+      profile:"Hồ sơ năng lực (PDF)",products:"Sản phẩm & Dịch vụ",offices:"Văn phòng & Nhà máy",hq:"Trụ sở chính",factory:"Chi nhánh – Nhà máy",copied:"Đã sao chép liên kết",lang:"EN"},
+  en:{call:"Phone",zalo:"Zalo",email:"Email",web:"Website",save:"Save to contacts",
+      expertise:"Expertise",projects:"Featured projects",close:"Close",shareQr:"Share QR",saveQr:"Save image",hold:"Press and hold the image to save",qrCaption:"Scan to view the card and save contact",
+      profile:"Company profile (PDF)",products:"Products & Services",offices:"Offices & Factory",hq:"Head office",factory:"Branch – Factory",copied:"Link copied",lang:"VI"}
 };
 const IC = {
   call:'<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>',
@@ -218,58 +252,46 @@ let lang = "vi";
 try{ const s = localStorage.getItem("lang"); if(s) lang = s; }catch(e){}
 
 function render(){
-  const L = CONFIG[lang], t = T[lang];
+  const L = CONFIG[lang], t = T[lang], nm = L.name || CONFIG.name;
   document.documentElement.lang = lang;
-  $("name").textContent = L.name || CONFIG.name;
-  document.title = (L.name || CONFIG.name) + " | NASA Engineering";
+  document.title = nm + " | NASA Engineering";
+  $("name").textContent = nm;
   $("role").textContent = L.role;
   $("company").textContent = L.company;
   $("tagline").textContent = L.tagline;
   $("langBtn").textContent = t.lang;
   document.querySelectorAll("[data-i18n]").forEach(el => el.textContent = t[el.dataset.i18n]);
-
+  $("logo").src = CONFIG.logo; $("brand").href = CONFIG.website;
   $("avatarBox").innerHTML = CONFIG.photo
-    ? `<img class="avatar" src="${CONFIG.photo}" alt="${L.name || CONFIG.name}">`
+    ? `<img class="avatar" src="${CONFIG.photo}" alt="${nm}">`
     : `<div class="avatar">${CONFIG.initials}</div>`;
-  if(CONFIG.logo){ $("logo").src = CONFIG.logo; $("logo").hidden = false; }
 
-  const acts = [
-    ["call", `tel:${CONFIG.phone}`],
-    ["zalo", `https://zalo.me/${CONFIG.zalo}`],
-    ["email", `mailto:${CONFIG.email}`],
-    ["web", CONFIG.website]
+  /* Thứ tự cố định theo SOP: Gọi, Zalo, Email, Website (+ Lưu danh bạ ở thanh dưới) */
+  const rows = [
+    ["call", t.call, CONFIG.phoneText, `tel:${CONFIG.phone}`, false],
+    ["zalo", t.zalo, CONFIG.phoneText, `https://zalo.me/${CONFIG.zalo}`, true],
+    ["email", t.email, CONFIG.email, `mailto:${CONFIG.email}`, false],
+    ["web", t.web, CONFIG.website.replace(/^https?:\/\//, ""), CONFIG.website, true]
   ];
-  $("actions").innerHTML = acts.map(([k,h]) =>
-    `<a class="act" href="${h}" ${k==="zalo"||k==="web"?'target="_blank" rel="noopener"':''}><span class="ic">${svg(IC[k])}</span>${t[k]}</a>`).join("");
+  $("contact").innerHTML = rows.map(([k,l,v,h,nw]) =>
+    `<a class="crow" href="${h}" ${nw?'target="_blank" rel="noopener"':''}><span class="cic">${svg(IC[k])}</span><span><small>${l}</small><b>${v}</b></span><span class="go">›</span></a>`).join("");
 
+  $("stats").innerHTML = L.stats.map(([v,l]) => `<div class="stat"><b>${v}</b><span>${l}</span></div>`).join("");
+  $("projects").innerHTML = L.projects.map(p => `<div class="proj"><div><b>${p.t}</b><small>${p.d}</small></div><em>${p.n}</em></div>`).join("");
+  $("pdf").href = CONFIG.profilePdf;
   $("chips").innerHTML = L.expertise.map(x => `<span class="chip">${x}</span>`).join("");
-  $("products").innerHTML = L.products.map(x => `<span class="chip">${x}</span>`).join("");
-  $("services").textContent = L.services;
-  $("projSummary").textContent = L.projSummary;
-  $("projects").innerHTML = (L.projects||[]).map((p,i) =>
-    `<div class="proj"><div class="num">${String(i+1).padStart(2,"0")}</div><div><b>${p.t}</b><small>${p.d}</small></div></div>`).join("");
+  $("services").innerHTML = L.services.map(x => `<span>${x}</span>`).join("");
+  $("products").innerHTML = L.products.map(x => `<li>${x}</li>`).join("");
 
-  const links = [];
-  if(CONFIG.profilePdf) links.push([t.profile, CONFIG.profilePdf]);
-  if(CONFIG.website) links.push([t.site + " · nasa-tech.com.vn", CONFIG.website]);
-  if(CONFIG.linkedin) links.push(["LinkedIn", CONFIG.linkedin]);
-  links.push([CONFIG.email, "mailto:" + CONFIG.email]);
-  if(CONFIG.email2) links.push([CONFIG.email2, "mailto:" + CONFIG.email2]);
-  links.push(["0936 973 604", "tel:" + CONFIG.phone]);
-  $("links").innerHTML = links.map(([n,h]) => `<a href="${h}" target="_blank" rel="noopener">${n}</a>`).join("");
   const q = a => "https://maps.google.com/?q=" + encodeURIComponent(a);
-  const offices = [
-    [t.hq, CONFIG.address, CONFIG.mapsUrl],
-    [t.showroom, CONFIG.showroom, null],
-    [t.factory, CONFIG.factory, null]
-  ];
-  $("offices").innerHTML = offices.map(([k,a,u]) => `<a href="${u||q(a)}" target="_blank" rel="noopener"><span><small>${k}</small>${a}</span></a>`).join("");
+  $("offices").innerHTML = [[t.hq, CONFIG.address, CONFIG.mapsUrl],[t.factory, CONFIG.factory, null]]
+    .filter(o => o[1])
+    .map(([k,a,u]) => `<a class="office" href="${u||q(a)}" target="_blank" rel="noopener"><small>${k}</small><span>${a}</span></a>`).join("");
 
-  $("foot").textContent = `© ${new Date().getFullYear()} ${CONFIG.en.company} · MST ${CONFIG.taxId}`;
+  $("foot").innerHTML = `${CONFIG.en.company}<br>MST / Tax ID ${CONFIG.taxId}`;
 }
 
 function toast(msg){ const el=$("toast"); el.textContent=msg; el.classList.add("on"); setTimeout(()=>el.classList.remove("on"),1800); }
-const pageUrl = () => location.href.split("#")[0].split("?")[0];
 
 $("langBtn").onclick = () => { lang = lang==="vi"?"en":"vi"; try{localStorage.setItem("lang",lang)}catch(e){} render(); };
 $("themeBtn").onclick = () => {
@@ -277,32 +299,47 @@ $("themeBtn").onclick = () => {
   const dark = r.dataset.theme ? r.dataset.theme==="dark" : matchMedia("(prefers-color-scheme: dark)").matches;
   r.dataset.theme = dark ? "light" : "dark";
 };
-/* ---------- Ảnh QR có thông tin (1080 × 1350 px) ---------- */
+
+/* ---------- Ảnh QR 1080 × 1350 px ---------- */
 let qrBlob = null, qrUrl = null, qrLang = null;
+const FONT = '"BVP", system-ui, sans-serif';
 const loadImg = src => new Promise(ok => { const i = new Image(); i.onload = () => ok(i); i.onerror = () => ok(null); i.src = src; });
-function fitText(ctx, text, maxW, size, weight){
-  do { ctx.font = `${weight} ${size}px "Be Vietnam Pro", system-ui, sans-serif`; size -= 2; } while (ctx.measureText(text).width > maxW && size > 20);
+/* Chữ có giãn ký tự, tự thu nhỏ để vừa khung, căn giữa */
+function drawText(x, text, cx, y, o){
+  let size = o.size, sp = o.track || 0, w;
+  const measure = () => { x.font = `${o.weight} ${size}px ${FONT}`; w = [...text].reduce((s,ch) => s + x.measureText(ch).width, 0) + sp * ([...text].length - 1); };
+  measure();
+  while(w > o.max && size > 18){ size -= 1; sp = (o.track || 0) * size / o.size; measure(); }
+  x.fillStyle = o.color; x.textAlign = "left";
+  let px = cx - w / 2;
+  for(const ch of text){ x.fillText(ch, px, y); px += x.measureText(ch).width + sp; }
 }
 async function buildQrCard(){
   if(qrBlob && qrLang === lang) return;
-  const L = CONFIG[lang], t = T[lang], W = 1080, H = 1350, url = pageUrl();
-  try{ await document.fonts.ready; }catch(e){}
+  const L = CONFIG[lang], t = T[lang], W = 1080, H = 1350, nm = L.name || CONFIG.name;
+  /* Nạp đủ font và bộ dấu tiếng Việt trước khi vẽ – tránh rơi về font hệ thống */
+  const sample = nm + L.role.toUpperCase() + L.company + t.qrCaption;
+  try{ await Promise.all([400,600,700].map(w => document.fonts.load(`${w} 40px "BVP"`, sample))); }catch(e){}
   const c = document.createElement("canvas"); c.width = W; c.height = H;
   const x = c.getContext("2d");
+  x.textBaseline = "alphabetic";
   x.fillStyle = "#FFFFFF"; x.fillRect(0, 0, W, H);
-  x.fillStyle = "#0B2545"; x.fillRect(0, 0, W, 16);
-  x.textAlign = "center"; x.textBaseline = "alphabetic";
-  const logo = CONFIG.logo ? await loadImg(CONFIG.logo) : null;
-  let y = 70;
-  if(logo){ const h = 130, w = logo.width * h / logo.height; x.drawImage(logo, (W - w) / 2, y, w, h); y += h + 20; }
-  x.fillStyle = "#0F1B2D"; fitText(x, L.name || CONFIG.name, W - 160, 64, 700); x.fillText(L.name || CONFIG.name, W / 2, y + 70);
-  x.fillStyle = "#13A8D8"; fitText(x, L.role, W - 160, 38, 600); x.fillText(L.role, W / 2, y + 125);
-  x.fillStyle = "#5B6B80"; fitText(x, L.company, W - 140, 30, 500); x.fillText(L.company, W / 2, y + 175);
-  const qs = 640, qy = y + 240;
+  x.fillStyle = "#0B2545"; x.fillRect(0, 0, W, 14); x.fillRect(0, H - 14, W, 14);
+
+  const logo = await loadImg(CONFIG.logo);
+  if(logo){ const h = 120, w = logo.width * h / logo.height; x.drawImage(logo, (W - w) / 2, 64, w, h); }
+  drawText(x, nm, W/2, 286, {size:66, weight:700, color:"#0F1B2D", max:W-160, track:-0.5});
+  drawText(x, L.role.toUpperCase(), W/2, 340, {size:28, weight:600, color:"#1597C9", max:W-160, track:5});
+  x.fillStyle = "#D5DCE5"; x.fillRect(W/2 - 50, 372, 100, 3);
+  drawText(x, L.company, W/2, 422, {size:29, weight:400, color:"#5B6B80", max:W-150, track:0});
+
+  const qs = 600, qy = 480, qx = (W - qs) / 2;
+  x.strokeStyle = "#E3E8EF"; x.lineWidth = 3;
+  x.beginPath(); x.roundRect ? x.roundRect(qx - 32, qy - 32, qs + 64, qs + 64, 28) : x.rect(qx - 32, qy - 32, qs + 64, qs + 64); x.stroke();
   const qc = document.createElement("canvas");
-  if(window.QRious) new QRious({ element: qc, value: url, size: qs, level: "H", foreground: "#0B2545", background: "#FFFFFF", padding: 0 });
-  x.drawImage(qc, (W - qs) / 2, qy, qs, qs);
-  /* Ảnh chân dung giữa mã: đường kính 22% cạnh QR, mức sửa lỗi H (30%) */
+  if(window.QRious) new QRious({ element: qc, value: CONFIG.cardUrl, size: qs, level: "H", foreground: "#0B2545", background: "#FFFFFF", padding: 0 });
+  x.drawImage(qc, qx, qy, qs, qs);
+  /* Chân dung giữa mã: đường kính 22% cạnh QR, mức sửa lỗi H (30%) */
   const av = CONFIG.photo ? await loadImg(CONFIG.photo) : null;
   if(av){
     const d = Math.round(qs * 0.22), cx = W / 2, cy = qy + qs / 2, r = d / 2;
@@ -313,8 +350,8 @@ async function buildQrCard(){
     x.restore();
     x.strokeStyle = "#0B2545"; x.lineWidth = 4; x.beginPath(); x.arc(cx, cy, r + 2, 0, Math.PI * 2); x.stroke();
   }
-  x.fillStyle = "#0F1B2D"; fitText(x, t.qrCaption, W - 160, 34, 600); x.fillText(t.qrCaption, W / 2, qy + qs + 70);
-  x.fillStyle = "#5B6B80"; fitText(x, url.replace(/^https?:\/\//, ""), W - 160, 28, 500); x.fillText(url.replace(/^https?:\/\//, ""), W / 2, qy + qs + 116);
+  drawText(x, t.qrCaption, W/2, qy + qs + 120, {size:32, weight:400, color:"#5B6B80", max:W-160, track:0});
+
   qrBlob = await new Promise(ok => c.toBlob(ok, "image/png"));
   if(qrUrl) URL.revokeObjectURL(qrUrl);
   qrUrl = URL.createObjectURL(qrBlob); qrLang = lang;
@@ -324,11 +361,7 @@ function downloadQr(){
   const a = document.createElement("a"); a.href = qrUrl; a.download = qrFileName();
   document.body.appendChild(a); a.click(); a.remove();
 }
-async function openQr(){
-  $("modal").classList.add("on");
-  await buildQrCard();
-  $("qrImg").src = qrUrl;
-}
+async function openQr(){ $("modal").classList.add("on"); await buildQrCard(); $("qrImg").src = qrUrl; }
 $("qrBtn").onclick = openQr;
 $("shareQr").onclick = async () => {
   await buildQrCard();
@@ -342,7 +375,8 @@ $("saveQr").onclick = async () => { await buildQrCard(); downloadQr(); };
 $("closeQr").onclick = () => $("modal").classList.remove("on");
 $("modal").onclick = e => { if(e.target.id==="modal") $("modal").classList.remove("on"); };
 $("shareBtn").onclick = async () => {
-  const data = {title: CONFIG[lang].name || CONFIG.name, text: CONFIG[lang].role + " – " + CONFIG[lang].company, url: pageUrl()};
+  const L = CONFIG[lang];
+  const data = {title: L.name || CONFIG.name, text: L.role + " – " + L.company, url: CONFIG.cardUrl};
   try{
     if(navigator.share) await navigator.share(data);
     else { await navigator.clipboard.writeText(data.url); toast(T[lang].copied); }
