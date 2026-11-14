@@ -249,7 +249,7 @@ const IC = {
 const svg = p => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
 const $ = id => document.getElementById(id);
 let lang = "vi";
-try{ const s = localStorage.getItem("lang"); if(s) lang = s; }catch(e){}
+try{ const s = localStorage.getItem("namecard:lang") || localStorage.getItem("lang"); if(s){ lang = s; localStorage.setItem("namecard:lang", s); } }catch(e){} /* khóa có tiền tố, đọc khóa "lang" cũ một lần */
 
 function render(){
   const L = CONFIG[lang], t = T[lang], nm = L.name || CONFIG.name;
@@ -293,7 +293,7 @@ function render(){
 
 function toast(msg){ const el=$("toast"); el.textContent=msg; el.classList.add("on"); setTimeout(()=>el.classList.remove("on"),1800); }
 
-$("langBtn").onclick = () => { lang = lang==="vi"?"en":"vi"; try{localStorage.setItem("lang",lang)}catch(e){} render(); };
+$("langBtn").onclick = () => { lang = lang==="vi"?"en":"vi"; try{localStorage.setItem("namecard:lang",lang)}catch(e){} render(); };
 $("themeBtn").onclick = () => {
   const r = document.documentElement;
   const dark = r.dataset.theme ? r.dataset.theme==="dark" : matchMedia("(prefers-color-scheme: dark)").matches;
