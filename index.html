@@ -194,7 +194,7 @@ const CONFIG = {
   email: "dedq@nasa-tech.com.vn",
   website: "https://nasa-tech.com.vn",
   linkedin: "",
-  profilePdf: "ho-so-nang-luc-NASA.pdf",
+  profilePdf: "",   // để trống thì ẩn nút hồ sơ năng lực
   address: "52 Trần Quang Cơ, P. Phú Thạnh, TP. Hồ Chí Minh",
   mapsUrl: "https://maps.app.goo.gl/TMoWxoE8T75GcMRr8",
   factory: "Lô G19, đường N3, KCN Nam Thuận, xã Mỹ Hạnh, Tây Ninh",
@@ -207,10 +207,9 @@ const CONFIG = {
     products: ["Hệ thống lạnh công nghiệp","IQF băng lưới / băng thép","Tủ đông tiếp xúc","Tủ đông gió","Máy mạ băng, tái đông","Chiller sữa – đồ uống","Thiết bị chế biến thủy sản","Kho lạnh – Panel PIR/PU","Điện mặt trời"],
     services: ["Tư vấn","Thiết kế","Chế tạo","Lắp đặt","Chuyển giao công nghệ"],
     projects: [
-      {t:"Nhà máy chế biến thủy sản", d:"Đồng Tháp, Cần Thơ, An Giang, Long An, Trà Vinh, Vĩnh Long, Myanmar · 2004⁠–⁠2022", n:15},
-      {t:"Kho lạnh logistics", d:"Long An, Hậu Giang, Đà Nẵng · 2015⁠–⁠2023", n:4},
-      {t:"Chế biến nông sản – thực phẩm", d:"Đồng Tháp, An Giang · 2019⁠–⁠2024", n:4},
-      {t:"Nhà máy sữa – đồ uống", d:"Bình Thuận · 2024", n:1}
+      {t:"Nhà máy chế biến thủy sản", d:"Đồng bằng sông Cửu Long, Myanmar · 2004⁠–⁠2022", n:15},
+      {t:"Kho lạnh logistics", d:"Đồng bằng sông Cửu Long, Duyên hải miền Trung · 2015⁠–⁠2023", n:4},
+      {t:"Chế biến nông sản – thực phẩm – đồ uống", d:"Đồng bằng sông Cửu Long, Nam Trung Bộ · 2019⁠–⁠2024", n:5}
     ]
   },
   en: {
@@ -223,10 +222,9 @@ const CONFIG = {
     products: ["Industrial refrigeration","IQF mesh / steel belt","Contact freezers","Air blast freezers","Glazing & re-freezers","Dairy & beverage chillers","Seafood processing equipment","Cold storage – PIR/PU panels","Solar power"],
     services: ["Consulting","Design","Manufacturing","Installation","Technology transfer"],
     projects: [
-      {t:"Seafood processing plants", d:"Dong Thap, Can Tho, An Giang, Long An, Tra Vinh, Vinh Long, Myanmar · 2004⁠–⁠2022", n:15},
-      {t:"Logistics cold storage", d:"Long An, Hau Giang, Da Nang · 2015⁠–⁠2023", n:4},
-      {t:"Agricultural & food processing", d:"Dong Thap, An Giang · 2019⁠–⁠2024", n:4},
-      {t:"Dairy & beverage plant", d:"Binh Thuan · 2024", n:1}
+      {t:"Seafood processing plants", d:"Mekong Delta, Myanmar · 2004⁠–⁠2022", n:15},
+      {t:"Logistics cold storage", d:"Mekong Delta, Central Coast · 2015⁠–⁠2023", n:4},
+      {t:"Agricultural, food & beverage processing", d:"Mekong Delta, South Central Coast · 2019⁠–⁠2024", n:5}
     ]
   }
 };
@@ -278,7 +276,7 @@ function render(){
 
   $("stats").innerHTML = L.stats.map(([v,l]) => `<div class="stat"><b>${v}</b><span>${l}</span></div>`).join("");
   $("projects").innerHTML = L.projects.map(p => `<div class="proj"><div><b>${p.t}</b><small>${p.d}</small></div><em>${p.n}</em></div>`).join("");
-  $("pdf").href = CONFIG.profilePdf;
+  if (CONFIG.profilePdf) $("pdf").href = CONFIG.profilePdf; else $("pdf").remove();
   $("chips").innerHTML = L.expertise.map(x => `<span class="chip">${x}</span>`).join("");
   $("services").innerHTML = L.services.map(x => `<span>${x}</span>`).join("");
   $("products").innerHTML = L.products.map(x => `<li>${x}</li>`).join("");
