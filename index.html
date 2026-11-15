@@ -386,7 +386,7 @@ const standalone = matchMedia("(display-mode: standalone)").matches || navigator
 let qrShown = false;
 try{ qrShown = !!sessionStorage.getItem("qrShown"); sessionStorage.setItem("qrShown", "1"); }catch(e){}
 if(/[?&]qr=1/.test(location.search) || (standalone && !qrShown)) openQr();
-if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(()=>{});
+if("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js", { scope: "./" }).catch(()=>{});
 </script>
 </body>
 </html>
